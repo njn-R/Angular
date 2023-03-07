@@ -6,5 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'my-app';
+  title = 'My-App';
+  name = "Neeraj"
+  fruits = ["Apple", "Orange", "Grapes"]
+
+  public person = {
+    name:"Saju"
+  }
+
+  getCurrentTime() {
+    return Date.now()
+  }
+  greet() {
+    return `Hello ${this.name}!`
+  }
 }
