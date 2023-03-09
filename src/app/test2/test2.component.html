@@ -1,1 +1,14 @@
-<p>test2 works!</p>
+<p>Class Binding</p>
+<!-- <button [class]="classtoApply" [class.boldClass] = "applyBoldClass">Class Binding</button> -->
+
+<button [ngClass]="addClasses()">Class Binding</button>
+
+<p>Style Binding</p>
+<!-- <button style="color:red" [style.font-weight] = "isBold ? 'bold': 'normal' ">Style Binding</button> -->
+<button style="color:red" [ngStyle]="setCssStyles()">Style Binding</button>
+<input type="text" [style.color]="hasError ? 'red': 'green'" value="hello">
+
+<h1>--------------------------------</h1>
+<h2>Two Way Binding</h2>
+<p><input type="text" [(ngModel)]="employeeName"></p>
+{{employeeName}}

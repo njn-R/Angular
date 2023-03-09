@@ -14,8 +14,9 @@ export class AppTest {
     imgsrc = "https://upload.wikimedia.org/wikipedia/commons/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg"
     imgsrc2 = "https://www.gardeningknowhow.com/wp-content/uploads/2017/07/hardwood-tree.jpg"
 
-    greet() {
-        console.log("Good Morning")
+    greet(e:any) {
+        console.log(e)
+        alert("Good Morning" + e)
     }
 
     toggleImg() {
@@ -33,6 +34,10 @@ export class AppTest {
 
     write() {
         console.log("tested")
+    }
+
+    logMessage(value:any) {
+        alert(value)
     }
 
 }
