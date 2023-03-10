@@ -1,0 +1,53 @@
+<p>structural works!</p>
+
+<div *ngIf="displayItem; then thenBlock else elseBlock"></div>
+
+<ng-template #thenBlock>
+    <h2>Structural Directives</h2>
+</ng-template>
+
+<ng-template #elseBlock>
+    <h2>Not Showing Data</h2>
+</ng-template>
+
+<div>
+    Show message <input type="checkbox" [(ngModel)]="showme">
+</div>
+
+<p *ngIf="showme">
+    You checked the box
+</p>
+
+<p *ngIf="!showme">
+    You unchecked the box
+</p>
+
+<h2>ngSwitch</h2>
+<div [ngSwitch]= color>
+    <div *ngSwitchCase="'blue'">You picked <span style="color:blue">blue</span> color</div>
+    <div *ngSwitchCase="'green'">You picked <span style="color:green">green</span> color</div>
+    <div *ngSwitchCase="'yellow'">You picked <span style="color:yellow">yellow</span> color</div>
+    <div *ngSwitchDefault>Not a color</div>
+</div>
+
+
+Enter a number<input type="text" [(ngModel)]= num> 
+<div [ngSwitch]="num">
+    <div *ngSwitchCase="'1'">One</div>
+    <div *ngSwitchCase="'2'">Two</div>
+    <div *ngSwitchCase="'3'">Three</div>
+    <div *ngSwitchDefault>Not a number</div>
+</div>
+
+<h2>ngFor</h2>
+<!-- <div *ngFor="let person of persons; even as f"> -->
+<!-- <div *ngFor="let person of persons; index as i"> -->
+<div *ngFor="let person of persons">
+    <p *ngIf="person.gender === 'Male'">{{person.name}}</p>
+</div>
+
+<select>
+    <option *ngFor="let person of persons">
+        {{person.name}}
+    </option>
+</select>
