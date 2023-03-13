@@ -1,0 +1,13 @@
+<div class="jumbotron container container=fluid">
+    <div class="card" style="width:18rem" >
+        <div class="card-body">
+            <h1>Parent Data</h1>
+            <input type="text" [(ngModel)] = "dataToChild">
+        </div>
+        <h4 style="margin-left: 13px;">Data from Child: {{childData}}</h4>
+    </div>
+
+
+    <br>
+    <app-child [parentData]="dataToChild" (childEmitter) ="updateParent($event)"></app-child>
+</div>

@@ -1,0 +1,13 @@
+<div class="jumbotron container container=fluid">
+    <div class="card" style="width:18rem">
+        <div class="card-body">
+            <h1>Child Data</h1>
+            <input type="text" [(ngModel)]= "childTextValue">   
+        </div>
+        <h4 style="margin-left: 13px;">Data From Parent: {{parentData}}</h4>
+    </div>
+    <div style="margin-top: 20px;">
+        <button type="button" class="btn btn-primary" (click)="sendData()">Child Data To Parent</button>
+    </div>
+</div>
+
