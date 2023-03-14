@@ -22,4 +22,47 @@
 
 <!-- <app-parent></app-parent> -->
 
-<app-person-details></app-person-details>
+<!-- <app-person-details></app-person-details>
+
+<app-persons-private></app-persons-private> -->
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">ExpertzLab</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a routerLink="/"class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="/details" class="nav-link" href="#">Details</a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="/private" class="nav-link" href="#">Private</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+<!-- <nav>
+    <button class="txt txt-success" routerLink="/details">Details</button>
+    <br>
+    <button class="txt txt-success" routerLink="/private">Private</button>
+</nav> -->
+<router-outlet></router-outlet>
+
+
+
+    <!--dust particel-->
+    <div>
+        <div class="starsec"></div>
+        <div class="starthird"></div>
+        <div class="starfourth"></div>
+        <div class="starfifth"></div>
+    </div>
+    <!--Dust particle end--->
