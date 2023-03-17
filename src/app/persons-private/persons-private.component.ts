@@ -8,11 +8,16 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./persons-private.component.css']
 })
 export class PersonsPrivateComponent {
-  persons: any[] = []
+  persons: any = []
+  errorMessage:string = "Loading..."
 
-  constructor(private userservice:UserService, private http:HttpClient) {}
+  constructor(public userservice:UserService) {}
 
   ngOnInit():void {
-    this.persons = this.userservice.getUsers()
+    // this.persons = this.userservice.getUsers()
+    this.userservice.getTypicodeUsers().subscribe( {
+      next:((result:any) => this.persons = result),
+      error:(err)=>console.log(this.errorMessage = err.message)
+    })
   }
 }

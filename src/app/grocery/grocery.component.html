@@ -1,0 +1,13 @@
+<div class="container">
+    <h1 class="txt text-success">Grocery List</h1>
+    <input type="text" placeholder="Grocery name" [(ngModel)]="grocery">
+    <button (click)="addGrocery()">Add</button>
+
+    <hr>
+    <h2 style="text-decoration: underline;">Your Grocery List</h2>
+    <div>  
+        <ul *ngFor="let item of groceries">
+            <li>{{item.id}} {{item.name}} <button class="btn btn-danger" (click)="removeGrocery(item.id)">X</button> </li>
+        </ul>
+    </div>
+</div>

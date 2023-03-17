@@ -1,11 +1,15 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { catchError, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  constructor() { }
+  private url = "https://jsonplaceholder.typicode.com/users/"
+
+  constructor(private http:HttpClient) { }
 
   getUsers() {
     return [
@@ -15,4 +19,13 @@ export class UserService {
           {id: 4, name: 'Sajesh', city:"Ktm", salary:15000, dob: new Date("06/20/2000")},
     ]
   }
+
+  getTypicodeUsers () {
+    return this.http.get(this.url).pipe(catchError((err)=> {return throwError(err)}))
+  }
+
+  getUser(id:number) {
+    return this.http.get(`${this.url}/${id}`).pipe(catchError((err)=> {return throwError(err)}))
+  }
+
 }

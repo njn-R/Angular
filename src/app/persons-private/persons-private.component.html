@@ -1,20 +1,31 @@
 <div class="jumbotron container container-fluid" style="margin-top: 40px;">
     <h1 class="txt txt-success">Person Private Details</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Name</th>
-                <th scope="col">Salary</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let person of persons">
-                <th scope="row">{{person.id}}</th>
-                <td>{{person.name | uppercase}}</td>
-                <td>{{person.salary | currency:"INR"}}</td>
-            </tr>
-        </tbody>
-    </table>
+    <div *ngIf="persons.length > 0; else nousers">
+        <table class="table" #table>
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Username</th>
+                    <th scope="col">Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let person of persons">
+                    <a [routerLink]="['/user', person.id]">
+                        <th scope="row">{{person.id}}</th>
+                    </a>
+                    <td>{{person.name }}</td>
+                    <td>{{person.username }}</td>
+                    <td>{{person.email}} </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <ng-template #nousers>
+        <p class="alert alert-danger text-danger">{{ errorMessage }}</p>
+    </ng-template>
 </div> 
+    

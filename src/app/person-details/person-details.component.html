@@ -10,15 +10,19 @@
                 <th scope="col">City</th>
                 <th scope="col">Salary</th>
                 <th scope="col">DOB</th>
+                <th scope="col">Age</th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let user of users">
                 <th scope="row">{{user.id}}</th>
                 <td>{{user.name | uppercase}}</td>
-                <td>{{user.city | lowercase}} </td>
-                <td>{{user.salary | currency:"INR":'symbol':'5.0'}}</td>
+                <td>{{user.city | lowercase | reverse}} </td>
+                <!-- <td>{{user.salary | currency:"INR":'symbol':'5.0'}}</td> -->
+                <!-- <td>{{user.salary | multiply:2}}</td> -->
+                <td>{{user.salary | squarer}}</td>
                 <td>{{user.dob | date:'short'}}</td>
+                <td>{{user.dob | age}}</td>
             </tr>
         </tbody>
     </table>

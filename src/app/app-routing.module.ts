@@ -3,12 +3,17 @@ import { RouterModule, Routes } from '@angular/router';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { PersonDetailsComponent } from './person-details/person-details.component';
 import { PersonsPrivateComponent } from './persons-private/persons-private.component'; 
+import { GroceryComponent } from './grocery/grocery.component';
+import { UserComponent } from './user/user.component';
 
 const routes:Routes = [
   { path:"", redirectTo: '/details', pathMatch: 'full'},
   { path:"details", component: PersonDetailsComponent},
   { path:"private", component: PersonsPrivateComponent},
+  { path:"grocery", component: GroceryComponent},
+  { path:"user/:id", component: UserComponent},
   { path: "**", component: ErrorPageComponent}
+
 
 ]
 

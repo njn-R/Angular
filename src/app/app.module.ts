@@ -13,10 +13,16 @@ import { PersonDetailsComponent } from './person-details/person-details.componen
 import { PersonsPrivateComponent } from './persons-private/persons-private.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import { AgePipe } from './age.pipe';
+import { ReversePipe } from './reverse.pipe';
+import { MultiplyPipe } from './multiply.pipe';
+import { SquarerPipe } from './squarer.pipe';
+import { GroceryComponent } from './grocery/grocery.component';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
-    AppComponent, AppTest, Test2Component, StructuralComponent, ParentComponent, ChildComponent, PersonDetailsComponent, PersonsPrivateComponent, ErrorPageComponent
+    AppComponent, AppTest, Test2Component, StructuralComponent, ParentComponent, ChildComponent, PersonDetailsComponent, PersonsPrivateComponent, ErrorPageComponent, AgePipe, ReversePipe, MultiplyPipe, SquarerPipe, GroceryComponent, UserComponent
   ],
   imports: [
     BrowserModule, FormsModule, HttpClientModule, AppRoutingModule
