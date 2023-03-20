@@ -14,5 +14,8 @@ export class GroceryComponent {
   }
   removeGrocery(removeID:number) {
     this.groceries = this.groceries.filter(item => item.id !== removeID)
+    this.groceries.forEach((item, index) =>  {
+        item.id = index + 1
+    })
   }
 }

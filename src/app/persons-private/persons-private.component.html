@@ -12,7 +12,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let person of persons">
+                <tr *ngFor="let person of persons | paginate: { itemsPerPage: 3, currentPage: p }">
                     <a [routerLink]="['/user', person.id]">
                         <th scope="row">{{person.id}}</th>
                     </a>
@@ -27,5 +27,9 @@
     <ng-template #nousers>
         <p class="alert alert-danger text-danger">{{ errorMessage }}</p>
     </ng-template>
+
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div> 
+
+
     

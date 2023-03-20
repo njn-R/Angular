@@ -19,15 +19,24 @@ import { MultiplyPipe } from './multiply.pipe';
 import { SquarerPipe } from './squarer.pipe';
 import { GroceryComponent } from './grocery/grocery.component';
 import { UserComponent } from './user/user.component';
+import { HomeComponent } from './home/home.component';
+import { OfficeComponent } from './office/office.component';
+
+import { EmployeeModule } from './employee/employee.module';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
-    AppComponent, AppTest, Test2Component, StructuralComponent, ParentComponent, ChildComponent, PersonDetailsComponent, PersonsPrivateComponent, ErrorPageComponent, AgePipe, ReversePipe, MultiplyPipe, SquarerPipe, GroceryComponent, UserComponent
+    AppComponent, AppTest, Test2Component, StructuralComponent, ParentComponent, ChildComponent, PersonDetailsComponent, PersonsPrivateComponent, ErrorPageComponent, AgePipe, ReversePipe, MultiplyPipe, SquarerPipe, GroceryComponent, UserComponent, HomeComponent, OfficeComponent
   ],
   imports: [
-    BrowserModule, FormsModule, HttpClientModule, AppRoutingModule
+    BrowserModule, FormsModule, HttpClientModule, AppRoutingModule, EmployeeModule, NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  constructor(){
+    console.log("App Module Loaded")
+  }
+}

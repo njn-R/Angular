@@ -10,7 +10,8 @@ import { HttpClient } from '@angular/common/http';
 export class PersonsPrivateComponent {
   persons: any = []
   errorMessage:string = "Loading..."
-
+  p: number = 1;
+  
   constructor(public userservice:UserService) {}
 
   ngOnInit():void {
