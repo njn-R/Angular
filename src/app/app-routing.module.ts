@@ -8,6 +8,7 @@ import { UserComponent } from './user/user.component';
 import { HomeComponent } from './home/home.component';
 import { OfficeComponent } from './office/office.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { AngularformsComponent } from './angularforms/angularforms.component';
 
 const routes:Routes = [
   { path:"", redirectTo: '/details', pathMatch: 'full'},
@@ -15,6 +16,7 @@ const routes:Routes = [
   { path:"private", component: PersonsPrivateComponent},
   { path:"grocery", component: GroceryComponent},
   { path:"rxjs", component: RxjsComponent},
+  { path:"forms", component: AngularformsComponent},
   
   { path:"user/:id", component: UserComponent,
     children: [
