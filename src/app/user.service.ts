@@ -8,6 +8,7 @@ import { catchError, throwError } from 'rxjs';
 export class UserService {
 
   private url = "https://jsonplaceholder.typicode.com/users/"
+  private url1 = "http://localhost:3000/users"
 
   constructor(private http:HttpClient) { }
 
@@ -28,4 +29,7 @@ export class UserService {
     return this.http.get(`${this.url}/${id}`).pipe(catchError((err)=> {return throwError(err)}))
   }
 
+  postUser(user:any){
+    return this.http.post(this.url1, user)
+  }
 }

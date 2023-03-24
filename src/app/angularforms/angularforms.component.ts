@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { User } from '../user';
+import { UserService } from '../user.service'
 
 @Component({
   selector: 'app-angularforms',
@@ -9,15 +11,21 @@ import { NgForm } from '@angular/forms';
 export class AngularformsComponent {
   countries:string[] = ["India", "UK", "US"]
 
+  userModel = new User("2", "Sandeep", "s@s.com", 234, "India")
+
   user = {
-    id:1,
+    id:"",
     firstName: "John",
     email: "john@gmail.com",
-    phone: "123-456-342",
+    phone: "1234",
     country: "US"
   }
 
+  constructor(private userService:UserService) {}
+
   onSubmit(formData:NgForm) {
-    console.log(formData.form.value)
+    this.userService.postUser(this.user).subscribe(data => console.log("posted"))
   }
+
+  
 }
