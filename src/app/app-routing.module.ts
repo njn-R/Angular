@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { OfficeComponent } from './office/office.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { AngularformsComponent } from './angularforms/angularforms.component';
+import { ReactiveformsComponent } from './reactiveforms/reactiveforms.component';
 
 const routes:Routes = [
   { path:"", redirectTo: '/details', pathMatch: 'full'},
@@ -17,6 +18,7 @@ const routes:Routes = [
   { path:"grocery", component: GroceryComponent},
   { path:"rxjs", component: RxjsComponent},
   { path:"forms", component: AngularformsComponent},
+  { path:"rforms", component: ReactiveformsComponent},
   
   { path:"user/:id", component: UserComponent,
     children: [
