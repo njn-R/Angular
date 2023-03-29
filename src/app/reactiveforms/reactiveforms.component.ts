@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormBuilder, FormArray } from '@angular/forms';
+import { forbiddenNameValidator } from '../shared/username.validator';
 
 
 @Component({
@@ -19,18 +20,33 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
     //   })
     // })
 
+    ageCheck:boolean = false
+    userForm:FormGroup = new FormGroup({})
+
     constructor(private fb:FormBuilder){}
-    userForm = this.fb.group({
-      username: ['', [Validators.required, Validators.minLength(3)]],
+    
+    ngOnInit():void {
+      this.userForm = this.fb.group({
+      username: ['', [Validators.required, Validators.minLength(3),forbiddenNameValidator]],
       password: [''],
       confirmPassword: [''],
-      address: this.fb.group({
-        city: [''],
-        state: [''],
-        country: ['']
+      email: ['', Validators.email],
+      age: [''],
+      parentName: [''],
+      Hobbies:this.fb.array([])
+      // address: this.fb.group({
+      //   city: [''],
+      //   state: [''],
+      //   country: ['']
+      // })
       })
-    })
-
+      this.userForm.get('age')?.valueChanges.subscribe(data =>{
+        if(data < 18) this.ageCheck = true
+        else this.ageCheck = false
+        if(!data) this.ageCheck = false
+      })
+    }
+    
 
   // loadData() {
   //   this.userForm.setValue({
@@ -51,8 +67,20 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
       confirmPassword: "password",
     })
   }
+  onAddHobby(){
+    this.Hobbies.push(this.fb.control(''))
+  }
+  onDeleteHobby(i:number){
+    this.Hobbies.removeAt(i)
+  }
 
   get username() {
     return this.userForm.get('username')
+  }
+  get email() {
+    return this.userForm.get('email')
+  }
+  get Hobbies() {
+    return this.userForm.get('Hobbies') as FormArray
   }
 }
