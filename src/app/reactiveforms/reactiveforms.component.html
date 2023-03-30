@@ -36,6 +36,9 @@
         <div class="form-group">
             <label for="confirmPassword">Confirm Password</label>
             <input type="password" class="form-control" formControlName="confirmPassword">
+            <div class="text-danger" *ngIf="userForm.errors?.['misMatch']">
+                Password mismatch
+            </div>
         </div>
 
         <div class="form-group">
@@ -52,6 +55,11 @@
             <label for="age">Enter your age</label>
             <input type="text" class="form-control" formControlName="age">
         </div>
+        <div *ngIf="age?.invalid && (age?.dirty || age?.touched)">
+            <div [hidden]="age?.valid"> 
+                <small class="text-danger">Age cannot be a negative number</small>
+            </div>
+        </div>
         <div class="form-group" *ngIf="ageCheck">
             <label for="parentName">Enter your parent's name</label>
             <input type="text" class="form-control" formControlName="parentName">
@@ -59,7 +67,7 @@
 
         <div>
             <button class="btn btn-warning mt-4" (click)="onAddHobby()">Add Hobby</button>      
-            <div formArrayName="hobby" *ngFor="let hobby of Hobbies.controls; index as i">
+            <div formArrayName="Hobbies" *ngFor="let hobby of Hobbies.controls; index as i">
                 <input type="text" class="form-control" [formControlName]="i"> 
                 <button class="btn btn-danger mt-4" (click)="onDeleteHobby(i)">X</button>
             </div>
@@ -82,7 +90,7 @@
             </div>
         </div> -->
     
-        <button class="btn btn-primary mt-5">Submit</button>
+        <button [disabled]="userForm.invalid" class="btn btn-primary mt-5">Submit</button>
         <button class="btn btn-outline-secondary mt-5" (click)="loadData()">Load Data</button>
     </form>
 </div>

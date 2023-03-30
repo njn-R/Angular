@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder, FormArray } from '@angular/forms';
 import { forbiddenNameValidator } from '../shared/username.validator';
+import { noNegativeNumber } from '../shared/negative.validator';
+import { passwordValidator } from '../shared/password.validator';
 
 
 @Component({
@@ -31,7 +33,7 @@ import { forbiddenNameValidator } from '../shared/username.validator';
       password: [''],
       confirmPassword: [''],
       email: ['', Validators.email],
-      age: [''],
+      age: ['', noNegativeNumber],
       parentName: [''],
       Hobbies:this.fb.array([])
       // address: this.fb.group({
@@ -39,11 +41,11 @@ import { forbiddenNameValidator } from '../shared/username.validator';
       //   state: [''],
       //   country: ['']
       // })
-      })
+      },{validators:passwordValidator})
       this.userForm.get('age')?.valueChanges.subscribe(data =>{
         if(data < 18) this.ageCheck = true
         else this.ageCheck = false
-        if(!data) this.ageCheck = false
+        if(!data || data<0) this.ageCheck = false
       })
     }
     
@@ -79,6 +81,9 @@ import { forbiddenNameValidator } from '../shared/username.validator';
   }
   get email() {
     return this.userForm.get('email')
+  }
+  get age() {
+    return this.userForm.get('age')
   }
   get Hobbies() {
     return this.userForm.get('Hobbies') as FormArray
