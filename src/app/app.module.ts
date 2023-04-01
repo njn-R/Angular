@@ -29,10 +29,12 @@ import { RxjsComponent } from './rxjs/rxjs.component';
 import { AngularformsComponent } from './angularforms/angularforms.component';
 import { ReactiveformsComponent } from './reactiveforms/reactiveforms.component';
 import { Rxjs1Component } from './rxjs1/rxjs1.component';
+import { ProductParentComponent } from './projection/product-parent/product-parent.component';
+import { ProductchildComponent } from './projection/productchild/productchild.component';
 
 @NgModule({
   declarations: [
-    AppComponent, AppTest, Test2Component, StructuralComponent, ParentComponent, ChildComponent, PersonDetailsComponent, PersonsPrivateComponent, ErrorPageComponent, AgePipe, ReversePipe, MultiplyPipe, SquarerPipe, GroceryComponent, UserComponent, HomeComponent, OfficeComponent, RxjsComponent, AngularformsComponent, ReactiveformsComponent, Rxjs1Component
+    AppComponent, AppTest, Test2Component, StructuralComponent, ParentComponent, ChildComponent, PersonDetailsComponent, PersonsPrivateComponent, ErrorPageComponent, AgePipe, ReversePipe, MultiplyPipe, SquarerPipe, GroceryComponent, UserComponent, HomeComponent, OfficeComponent, RxjsComponent, AngularformsComponent, ReactiveformsComponent, Rxjs1Component, ProductParentComponent, ProductchildComponent
   ],
   imports: [
     BrowserModule, FormsModule, HttpClientModule, AppRoutingModule, EmployeeModule, NgxPaginationModule, ReactiveFormsModule

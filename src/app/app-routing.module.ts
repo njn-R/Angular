@@ -11,6 +11,7 @@ import { RxjsComponent } from './rxjs/rxjs.component';
 import { Rxjs1Component } from './rxjs1/rxjs1.component';
 import { AngularformsComponent } from './angularforms/angularforms.component';
 import { ReactiveformsComponent } from './reactiveforms/reactiveforms.component';
+import { ProductParentComponent } from './projection/product-parent/product-parent.component';
 
 const routes:Routes = [
   { path:"", redirectTo: '/details', pathMatch: 'full'},
@@ -21,6 +22,7 @@ const routes:Routes = [
   { path:"rxjs1", component: Rxjs1Component},
   { path:"forms", component: AngularformsComponent},
   { path:"rforms", component: ReactiveformsComponent},
+  { path:"productparent", component: ProductParentComponent },
   
   { path:"user/:id", component: UserComponent,
     children: [
