@@ -1,0 +1,14 @@
+<h1>Parent Component</h1>
+<br>
+<br>
+<input type="text" [(ngModel)]="toChild">
+<div>
+    <button class="btn btn-primary" (click)="toggle()">Show/Hide</button>
+    <app-life-child [receivedData]="toChild" *ngIf="showChild" [product]="product"></app-life-child>
+</div>
+
+<h2>Simple Form</h2>
+<p>Product Name: <input type="text" [(ngModel)]="productName"></p>
+<p>Product Price: <input type="text" [(ngModel)]="productPrice"></p>
+<button (click)="updateProduct()">Update Product</button>
+

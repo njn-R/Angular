@@ -31,10 +31,12 @@ import { ReactiveformsComponent } from './reactiveforms/reactiveforms.component'
 import { Rxjs1Component } from './rxjs1/rxjs1.component';
 import { ProductParentComponent } from './projection/product-parent/product-parent.component';
 import { ProductchildComponent } from './projection/productchild/productchild.component';
+import { LifecycleHookComponent } from './lifecycle-hook/lifecycle-hook.component';
+import { LifeChildComponent } from './lifecycle-hook/life-child/life-child.component';
 
 @NgModule({
   declarations: [
-    AppComponent, AppTest, Test2Component, StructuralComponent, ParentComponent, ChildComponent, PersonDetailsComponent, PersonsPrivateComponent, ErrorPageComponent, AgePipe, ReversePipe, MultiplyPipe, SquarerPipe, GroceryComponent, UserComponent, HomeComponent, OfficeComponent, RxjsComponent, AngularformsComponent, ReactiveformsComponent, Rxjs1Component, ProductParentComponent, ProductchildComponent
+    AppComponent, AppTest, Test2Component, StructuralComponent, ParentComponent, ChildComponent, PersonDetailsComponent, PersonsPrivateComponent, ErrorPageComponent, AgePipe, ReversePipe, MultiplyPipe, SquarerPipe, GroceryComponent, UserComponent, HomeComponent, OfficeComponent, RxjsComponent, AngularformsComponent, ReactiveformsComponent, Rxjs1Component, ProductParentComponent, ProductchildComponent, LifecycleHookComponent, LifeChildComponent
   ],
   imports: [
     BrowserModule, FormsModule, HttpClientModule, AppRoutingModule, EmployeeModule, NgxPaginationModule, ReactiveFormsModule
