@@ -33,13 +33,20 @@ import { ProductParentComponent } from './projection/product-parent/product-pare
 import { ProductchildComponent } from './projection/productchild/productchild.component';
 import { LifecycleHookComponent } from './lifecycle-hook/lifecycle-hook.component';
 import { LifeChildComponent } from './lifecycle-hook/life-child/life-child.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialUIComponent } from './material-ui/material-ui.component';
+import { MaterialUIModule } from './material-ui/material-ui.module';
+
+
+
+
 
 @NgModule({
   declarations: [
-    AppComponent, AppTest, Test2Component, StructuralComponent, ParentComponent, ChildComponent, PersonDetailsComponent, PersonsPrivateComponent, ErrorPageComponent, AgePipe, ReversePipe, MultiplyPipe, SquarerPipe, GroceryComponent, UserComponent, HomeComponent, OfficeComponent, RxjsComponent, AngularformsComponent, ReactiveformsComponent, Rxjs1Component, ProductParentComponent, ProductchildComponent, LifecycleHookComponent, LifeChildComponent
+    AppComponent, AppTest, Test2Component, StructuralComponent, ParentComponent, ChildComponent, PersonDetailsComponent, PersonsPrivateComponent, ErrorPageComponent, AgePipe, ReversePipe, MultiplyPipe, SquarerPipe, GroceryComponent, UserComponent, HomeComponent, OfficeComponent, RxjsComponent, AngularformsComponent, ReactiveformsComponent, Rxjs1Component, ProductParentComponent, ProductchildComponent, LifecycleHookComponent, LifeChildComponent, MaterialUIComponent
   ],
   imports: [
-    BrowserModule, FormsModule, HttpClientModule, AppRoutingModule, EmployeeModule, NgxPaginationModule, ReactiveFormsModule
+    BrowserModule, FormsModule, HttpClientModule, AppRoutingModule, EmployeeModule, NgxPaginationModule, ReactiveFormsModule, BrowserAnimationsModule, MaterialUIModule
   ],
   providers: [],
   bootstrap: [AppComponent]
